@@ -2,6 +2,9 @@
 
 This repo contains a Grafana dashboard that can be used to monitor and visualize [GitHub Server Stats](https://docs.github.com/en/rest/enterprise-admin/admin-stats#get-github-enterprise-server-statistics) metrics. 
 
+![image](https://user-images.githubusercontent.com/10562371/184500311-d54f90cf-53d6-4a17-964c-fb1de6a64fb4.png)
+
+
 ## Requirements
 
 In order to use this dashboard in Grafana, you need to add as a data source a Prometheus server that is scraping the metrics exported by the [GitHub Server Stats Prometheus Exporter Action
