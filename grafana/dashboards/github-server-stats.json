@@ -1,3682 +1,3681 @@
 {
-   "annotations": {
-     "list": [
-       {
-         "builtIn": 1,
-         "datasource": {
-           "type": "grafana",
-           "uid": "-- Grafana --"
-         },
-         "enable": true,
-         "hide": true,
-         "iconColor": "rgba(0, 211, 255, 1)",
-         "name": "Annotations & Alerts",
-         "target": {
-           "limit": 100,
-           "matchAny": false,
-           "tags": [],
-           "type": "dashboard"
-         },
-         "type": "dashboard"
-       }
-     ]
-   },
-   "editable": true,
-   "fiscalYearStartMonth": 0,
-   "graphTooltip": 0,
-   "id": 1,
-   "links": [],
-   "liveNow": false,
-   "panels": [
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 0
-       },
-       "id": 41,
-       "panels": [],
-       "title": "Organizations and Teams",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "fixedColor": "text",
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 5,
-         "x": 0,
-         "y": 1
-       },
-       "id": 42,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "code",
-           "expr": "sum(total_orgs{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Orgs",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 5,
-         "x": 5,
-         "y": 1
-       },
-       "id": 43,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_disabled_orgs{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Disabled Orgs",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           },
-           "unit": "string"
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 14,
-         "x": 10,
-         "y": 1
-       },
-       "id": 46,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_orgs{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Orgs",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 5,
-         "x": 0,
-         "y": 9
-       },
-       "id": 44,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_teams{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Teams",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 5,
-         "x": 5,
-         "y": 9
-       },
-       "id": 45,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_team_members{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Team Members",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           },
-           "unit": "string"
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 14,
-         "x": 10,
-         "y": 9
-       },
-       "id": 47,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "exemplar": false,
-           "expr": "sum by(host_name) (total_orgs{host_name=~\"$host_name\"})",
-           "format": "time_series",
-           "instant": false,
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Teams",
-       "type": "timeseries"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 17
-       },
-       "id": 49,
-       "panels": [],
-       "title": "Users",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 6,
-         "x": 0,
-         "y": 18
-       },
-       "id": 51,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_users{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Users",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 6,
-         "x": 6,
-         "y": 18
-       },
-       "id": 52,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_admin_users{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Admins",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 6,
-         "x": 12,
-         "y": 18
-       },
-       "id": 56,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "code",
-           "expr": "sum(total_users{host_name=~\"$host_name\"}) - sum(total_suspended_users{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Active Users",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green",
-                 "value": null
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 6,
-         "x": 18,
-         "y": 18
-       },
-       "id": 53,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_suspended_users{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Suspended Users",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           },
-           "unit": "string"
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 10,
-         "w": 24,
-         "x": 0,
-         "y": 26
-       },
-       "id": 55,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_users{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Users",
-       "type": "timeseries"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 36
-       },
-       "id": 27,
-       "panels": [],
-       "title": "Repos",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 5,
-         "x": 0,
-         "y": 37
-       },
-       "id": 31,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_repos{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Repos",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           },
-           "unit": "string"
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 19,
-         "x": 5,
-         "y": 37
-       },
-       "id": 29,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_repos{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Repos",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 0,
-         "y": 46
-       },
-       "id": 33,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_org_repos{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Org Repos",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 8,
-         "y": 46
-       },
-       "id": 35,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_root_repos{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Root Repos",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 16,
-         "y": 46
-       },
-       "id": 37,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_fork_repos{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Fork Repos",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 5,
-         "x": 0,
-         "y": 53
-       },
-       "id": 91,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_pushes{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Pushes",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 11,
-         "x": 5,
-         "y": 53
-       },
-       "id": 38,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_pushes{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Pushes",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 16,
-         "y": 53
-       },
-       "id": 39,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_wikis{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Wikis",
-       "type": "timeseries"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 60
-       },
-       "id": 6,
-       "panels": [],
-       "title": "Issues",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 5,
-         "x": 0,
-         "y": 61
-       },
-       "id": 12,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_issues{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Issues",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           },
-           "unit": "string"
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 19,
-         "x": 5,
-         "y": 61
-       },
-       "id": 2,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_issues{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Issues",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 0,
-         "y": 70
-       },
-       "id": 4,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_open_issues{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Open Issues",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 8,
-         "y": 70
-       },
-       "id": 8,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_closed_issues{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Closed Issues",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 16,
-         "y": 70
-       },
-       "id": 10,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_issue_comments{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Issue Comments",
-       "type": "timeseries"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 77
-       },
-       "id": 14,
-       "panels": [],
-       "title": "Pull Requests",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 5,
-         "x": 0,
-         "y": 78
-       },
-       "id": 17,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_pulls{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Pull Requests",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           },
-           "unit": "string"
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 11,
-         "x": 5,
-         "y": 78
-       },
-       "id": 19,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_pulls{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Pull Requests",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           },
-           "unit": "percent"
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 8,
-         "x": 16,
-         "y": 78
-       },
-       "id": 57,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "horizontal",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "code",
-           "expr": "(sum by(host_name) (total_unmergeable_pulls{host_name=~\"$host_name\"})/ sum by(host_name) (total_pulls {host_name=~\"$host_name\"}))*100",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Unmergeable PRs %",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 0,
-         "y": 87
-       },
-       "id": 21,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_merged_pulls{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Merged PRs",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 8,
-         "y": 87
-       },
-       "id": 23,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_mergeable_pulls{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Mergeable PRs",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 7,
-         "w": 8,
-         "x": 16,
-         "y": 87
-       },
-       "id": 25,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_unmergeable_pulls{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Unmergeable PRs",
-       "type": "timeseries"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 94
-       },
-       "id": 59,
-       "panels": [],
-       "title": "Comments",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 6,
-         "x": 0,
-         "y": 95
-       },
-       "id": 63,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_issue_comments{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Issue Comments",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 6,
-         "x": 6,
-         "y": 95
-       },
-       "id": 64,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_pull_request_comments{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total PR Comments",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 6,
-         "x": 12,
-         "y": 95
-       },
-       "id": 61,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_commit_comments{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Commit Comments",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 9,
-         "w": 6,
-         "x": 18,
-         "y": 95
-       },
-       "id": 62,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_gist_comments{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Gist Comments",
-       "type": "stat"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 104
-       },
-       "id": 66,
-       "panels": [],
-       "title": "Gists",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 10,
-         "w": 5,
-         "x": 0,
-         "y": 105
-       },
-       "id": 74,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_gists{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Gists",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 5,
-         "w": 5,
-         "x": 5,
-         "y": 105
-       },
-       "id": 76,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_public_gists{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Public Gists",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 10,
-         "w": 14,
-         "x": 10,
-         "y": 105
-       },
-       "id": 71,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_gists{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Gists",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 5,
-         "w": 5,
-         "x": 5,
-         "y": 110
-       },
-       "id": 77,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_private_gists{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Private Gists",
-       "type": "stat"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 115
-       },
-       "id": 73,
-       "panels": [],
-       "title": "Hooks",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 10,
-         "w": 5,
-         "x": 0,
-         "y": 116
-       },
-       "id": 68,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_hooks{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Hooks",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 5,
-         "w": 5,
-         "x": 5,
-         "y": 116
-       },
-       "id": 78,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_active_hooks{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Active Hooks",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 10,
-         "w": 14,
-         "x": 10,
-         "y": 116
-       },
-       "id": 80,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_hooks{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Hooks",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 5,
-         "w": 5,
-         "x": 5,
-         "y": 121
-       },
-       "id": 79,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_inactive_hooks{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Inactive Hooks",
-       "type": "stat"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 126
-       },
-       "id": 82,
-       "panels": [],
-       "title": "Pages",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 5,
-         "x": 0,
-         "y": 127
-       },
-       "id": 85,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_pages{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Pages",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 8,
-         "w": 19,
-         "x": 5,
-         "y": 127
-       },
-       "id": 86,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_pages{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Pages",
-       "type": "timeseries"
-     },
-     {
-       "collapsed": false,
-       "gridPos": {
-         "h": 1,
-         "w": 24,
-         "x": 0,
-         "y": 135
-       },
-       "id": 84,
-       "panels": [],
-       "title": "Milestones",
-       "type": "row"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 10,
-         "w": 5,
-         "x": 0,
-         "y": 136
-       },
-       "id": 87,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_milestones{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Milestones",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 5,
-         "w": 5,
-         "x": 5,
-         "y": 136
-       },
-       "id": 88,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_open_milestones{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Open Milestones",
-       "type": "stat"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "palette-classic"
-           },
-           "custom": {
-             "axisCenteredZero": false,
-             "axisColorMode": "text",
-             "axisLabel": "",
-             "axisPlacement": "auto",
-             "barAlignment": 0,
-             "drawStyle": "line",
-             "fillOpacity": 0,
-             "gradientMode": "none",
-             "hideFrom": {
-               "legend": false,
-               "tooltip": false,
-               "viz": false
-             },
-             "lineInterpolation": "linear",
-             "lineWidth": 1,
-             "pointSize": 5,
-             "scaleDistribution": {
-               "type": "linear"
-             },
-             "showPoints": "auto",
-             "spanNulls": false,
-             "stacking": {
-               "group": "A",
-               "mode": "none"
-             },
-             "thresholdsStyle": {
-               "mode": "off"
-             }
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 10,
-         "w": 14,
-         "x": 10,
-         "y": 136
-       },
-       "id": 90,
-       "options": {
-         "legend": {
-           "calcs": [],
-           "displayMode": "table",
-           "placement": "bottom",
-           "showLegend": true
-         },
-         "tooltip": {
-           "mode": "single",
-           "sort": "none"
-         }
-       },
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum by(host_name) (total_milestones{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Total Milestones",
-       "type": "timeseries"
-     },
-     {
-       "datasource": {
-         "type": "prometheus",
-         "uid": "PBFA97CFB590B2093"
-       },
-       "fieldConfig": {
-         "defaults": {
-           "color": {
-             "mode": "thresholds"
-           },
-           "mappings": [],
-           "thresholds": {
-             "mode": "absolute",
-             "steps": [
-               {
-                 "color": "green"
-               }
-             ]
-           }
-         },
-         "overrides": []
-       },
-       "gridPos": {
-         "h": 5,
-         "w": 5,
-         "x": 5,
-         "y": 141
-       },
-       "id": 89,
-       "options": {
-         "colorMode": "value",
-         "graphMode": "area",
-         "justifyMode": "auto",
-         "orientation": "auto",
-         "reduceOptions": {
-           "calcs": [
-             "lastNotNull"
-           ],
-           "fields": "",
-           "values": false
-         },
-         "textMode": "auto"
-       },
-       "pluginVersion": "9.1.0-beta1",
-       "targets": [
-         {
-           "datasource": {
-             "type": "prometheus",
-             "uid": "PBFA97CFB590B2093"
-           },
-           "editorMode": "builder",
-           "expr": "sum(total_closed_milestones{host_name=~\"$host_name\"})",
-           "legendFormat": "__auto",
-           "range": true,
-           "refId": "A"
-         }
-       ],
-       "title": "Closed Milestones",
-       "type": "stat"
-     }
-   ],
-   "refresh": false,
-   "schemaVersion": 37,
-   "style": "dark",
-   "tags": [],
-   "templating": {
-     "list": [
-       {
-         "current": {},
-         "datasource": {
-           "type": "prometheus",
-           "uid": "PBFA97CFB590B2093"
-         },
-         "definition": "label_values(host_name)",
-         "hide": 0,
-         "includeAll": true,
-         "label": "Host",
-         "multi": true,
-         "name": "host_name",
-         "options": [],
-         "query": {
-           "query": "label_values(host_name)",
-           "refId": "StandardVariableQuery"
-         },
-         "refresh": 1,
-         "regex": "",
-         "skipUrlSync": false,
-         "sort": 0,
-         "type": "query"
-       }
-     ]
-   },
-   "time": {
-     "from": "now-3h",
-     "to": "now"
-   },
-   "timepicker": {},
-   "timezone": "",
-   "title": "GitHub Server Stats",
-   "uid": "AjTydMm4z",
-   "version": 3,
-   "weekStart": ""
- }
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 41,
+      "panels": [],
+      "title": "Organizations and Teams",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 0,
+        "y": 1
+      },
+      "id": 42,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(total_orgs{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Orgs",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 5,
+        "y": 1
+      },
+      "id": 43,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_disabled_orgs{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Disabled Orgs",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 14,
+        "x": 10,
+        "y": 1
+      },
+      "id": 46,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_orgs{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Orgs",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 0,
+        "y": 9
+      },
+      "id": 44,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_teams{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Teams",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 5,
+        "y": 9
+      },
+      "id": 45,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_team_members{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Team Members",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 14,
+        "x": 10,
+        "y": 9
+      },
+      "id": 47,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sum by(host_name) (total_orgs{host_name=~\"$host_name\"})",
+          "format": "time_series",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Teams",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 49,
+      "panels": [],
+      "title": "Users",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 18
+      },
+      "id": 51,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_users{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Users",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 18
+      },
+      "id": 52,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_admin_users{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Admins",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 18
+      },
+      "id": 56,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(total_users{host_name=~\"$host_name\"}) - sum(total_suspended_users{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Active Users",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 18
+      },
+      "id": 53,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_suspended_users{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Suspended Users",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 55,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_users{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Users",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 27,
+      "panels": [],
+      "title": "Repos",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 5,
+        "x": 0,
+        "y": 37
+      },
+      "id": 31,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_repos{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Repos",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 19,
+        "x": 5,
+        "y": 37
+      },
+      "id": 29,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_repos{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Repos",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 46
+      },
+      "id": 33,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_org_repos{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Org Repos",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 46
+      },
+      "id": 35,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_root_repos{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Root Repos",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 46
+      },
+      "id": 37,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_fork_repos{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Fork Repos",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 0,
+        "y": 53
+      },
+      "id": 91,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.0.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_pushes{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Pushes",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 11,
+        "x": 5,
+        "y": 53
+      },
+      "id": 38,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_pushes{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Pushes",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 53
+      },
+      "id": 39,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_wikis{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Wikis",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 60
+      },
+      "id": 6,
+      "panels": [],
+      "title": "Issues",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 5,
+        "x": 0,
+        "y": 61
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_issues{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Issues",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 19,
+        "x": 5,
+        "y": 61
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_issues{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Issues",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 70
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_open_issues{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Open Issues",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 70
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_closed_issues{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Closed Issues",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 70
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_issue_comments{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Issue Comments",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 77
+      },
+      "id": 14,
+      "panels": [],
+      "title": "Pull Requests",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 5,
+        "x": 0,
+        "y": 78
+      },
+      "id": 17,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_pulls{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Pull Requests",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 11,
+        "x": 5,
+        "y": 78
+      },
+      "id": 19,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_pulls{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Pull Requests",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 16,
+        "y": 78
+      },
+      "id": 57,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "(sum by(host_name) (total_unmergeable_pulls{host_name=~\"$host_name\"})/ sum by(host_name) (total_pulls {host_name=~\"$host_name\"}))*100",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Unmergeable PRs %",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 87
+      },
+      "id": 21,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_merged_pulls{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Merged PRs",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 87
+      },
+      "id": 23,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_mergeable_pulls{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Mergeable PRs",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 87
+      },
+      "id": 25,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_unmergeable_pulls{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Unmergeable PRs",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 94
+      },
+      "id": 59,
+      "panels": [],
+      "title": "Comments",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 95
+      },
+      "id": 63,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_issue_comments{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Issue Comments",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 6,
+        "y": 95
+      },
+      "id": 64,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_pull_request_comments{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total PR Comments",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 12,
+        "y": 95
+      },
+      "id": 61,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_commit_comments{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Commit Comments",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 95
+      },
+      "id": 62,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_gist_comments{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Gist Comments",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 104
+      },
+      "id": 66,
+      "panels": [],
+      "title": "Gists",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 5,
+        "x": 0,
+        "y": 105
+      },
+      "id": 74,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_gists{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Gists",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 5,
+        "y": 105
+      },
+      "id": 76,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_public_gists{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Public Gists",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 14,
+        "x": 10,
+        "y": 105
+      },
+      "id": 71,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_gists{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Gists",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 5,
+        "y": 110
+      },
+      "id": 77,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_private_gists{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Private Gists",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 115
+      },
+      "id": 73,
+      "panels": [],
+      "title": "Hooks",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 5,
+        "x": 0,
+        "y": 116
+      },
+      "id": 68,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_hooks{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Hooks",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 5,
+        "y": 116
+      },
+      "id": 78,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_active_hooks{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Active Hooks",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 14,
+        "x": 10,
+        "y": 116
+      },
+      "id": 80,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_hooks{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Hooks",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 5,
+        "y": 121
+      },
+      "id": 79,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_inactive_hooks{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Inactive Hooks",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 126
+      },
+      "id": 82,
+      "panels": [],
+      "title": "Pages",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 0,
+        "y": 127
+      },
+      "id": 85,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_pages{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Pages",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 19,
+        "x": 5,
+        "y": 127
+      },
+      "id": 86,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_pages{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Pages",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 135
+      },
+      "id": 84,
+      "panels": [],
+      "title": "Milestones",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 5,
+        "x": 0,
+        "y": 136
+      },
+      "id": 87,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_milestones{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Milestones",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 5,
+        "y": 136
+      },
+      "id": 88,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_open_milestones{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Open Milestones",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 14,
+        "x": 10,
+        "y": 136
+      },
+      "id": 90,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_milestones{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Milestones",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 5,
+        "y": 141
+      },
+      "id": 89,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0-beta1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_closed_milestones{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Closed Milestones",
+      "type": "stat"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(host_name)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Host",
+        "multi": true,
+        "name": "host_name",
+        "options": [],
+        "query": {
+          "query": "label_values(host_name)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "GitHub Server Stats",
+  "uid": "AjTydMm4z",
+  "version": 2,
+  "weekStart": ""
+}
