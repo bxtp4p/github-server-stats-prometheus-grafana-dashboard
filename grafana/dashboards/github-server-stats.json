@@ -51,7 +51,7 @@
       },
       "id": 41,
       "panels": [],
-      "title": "Organizations and Teams",
+      "title": "Organizations",
       "type": "row"
     },
     {
@@ -250,7 +250,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -306,7 +306,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -317,7 +317,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -528,7 +528,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -587,7 +587,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -598,7 +598,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -944,7 +944,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1000,7 +1000,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true,
+          "showLegend": false,
           "values": [
             "value"
           ]
@@ -1014,7 +1014,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1178,7 +1178,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1234,7 +1234,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -1245,7 +1245,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1334,7 +1334,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1423,7 +1423,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1511,7 +1511,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1660,7 +1660,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1749,7 +1749,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1913,7 +1913,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -1970,7 +1970,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "donut",
         "reduceOptions": {
@@ -1981,7 +1981,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2083,7 +2083,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2172,7 +2172,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2227,7 +2227,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -2238,7 +2238,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2402,7 +2402,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2470,7 +2470,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2586,7 +2586,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2676,7 +2676,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2764,7 +2764,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -2821,7 +2821,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 5,
         "w": 6,
         "x": 0,
         "y": 96
@@ -2882,7 +2882,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 5,
         "w": 6,
         "x": 6,
         "y": 96
@@ -2924,128 +2924,6 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 12,
-        "y": 96
-      },
-      "id": 106,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.1.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "builder",
-          "expr": "sum(total_commit_comments{host_name=~\"$host_name\"})",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Total Commit Comments",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 96
-      },
-      "id": 62,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.1.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "builder",
-          "expr": "sum(total_gist_comments{host_name=~\"$host_name\"})",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Total Gist Comments",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -3064,10 +2942,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 105
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 96
       },
       "id": 105,
       "options": {
@@ -3077,7 +2955,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "right",
-          "showLegend": true,
+          "showLegend": false,
           "values": [
             "percent"
           ]
@@ -3091,7 +2969,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -3151,12 +3029,134 @@
       "type": "piechart"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 101
+      },
+      "id": 106,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_commit_comments{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Commit Comments",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 6,
+        "y": 101
+      },
+      "id": 62,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_gist_comments{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Gist Comments",
+      "type": "stat"
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 114
+        "y": 106
       },
       "id": 66,
       "panels": [],
@@ -3190,7 +3190,7 @@
         "h": 10,
         "w": 5,
         "x": 0,
-        "y": 115
+        "y": 107
       },
       "id": 74,
       "options": {
@@ -3282,7 +3282,7 @@
         "h": 10,
         "w": 12,
         "x": 5,
-        "y": 115
+        "y": 107
       },
       "id": 71,
       "options": {
@@ -3293,7 +3293,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -3338,7 +3338,7 @@
         "h": 10,
         "w": 7,
         "x": 17,
-        "y": 115
+        "y": 107
       },
       "id": 103,
       "options": {
@@ -3349,7 +3349,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "donut",
         "reduceOptions": {
@@ -3360,7 +3360,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -3400,7 +3400,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 125
+        "y": 117
       },
       "id": 73,
       "panels": [],
@@ -3434,7 +3434,7 @@
         "h": 10,
         "w": 5,
         "x": 0,
-        "y": 126
+        "y": 118
       },
       "id": 68,
       "options": {
@@ -3493,7 +3493,7 @@
         "h": 10,
         "w": 9,
         "x": 5,
-        "y": 126
+        "y": 118
       },
       "id": 104,
       "options": {
@@ -3504,7 +3504,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "donut",
         "reduceOptions": {
@@ -3515,7 +3515,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -3575,7 +3575,7 @@
         "h": 10,
         "w": 10,
         "x": 14,
-        "y": 126
+        "y": 118
       },
       "id": 101,
       "options": {
@@ -3585,7 +3585,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -3596,7 +3596,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -3623,7 +3623,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 136
+        "y": 128
       },
       "id": 82,
       "panels": [],
@@ -3657,7 +3657,7 @@
         "h": 8,
         "w": 5,
         "x": 0,
-        "y": 137
+        "y": 129
       },
       "id": 85,
       "options": {
@@ -3749,7 +3749,7 @@
         "h": 8,
         "w": 19,
         "x": 5,
-        "y": 137
+        "y": 129
       },
       "id": 86,
       "options": {
@@ -3760,7 +3760,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -3786,7 +3786,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 145
+        "y": 137
       },
       "id": 84,
       "panels": [],
@@ -3820,7 +3820,7 @@
         "h": 10,
         "w": 5,
         "x": 0,
-        "y": 146
+        "y": 138
       },
       "id": 87,
       "options": {
@@ -3911,7 +3911,7 @@
         "h": 10,
         "w": 12,
         "x": 5,
-        "y": 146
+        "y": 138
       },
       "id": 90,
       "options": {
@@ -3922,7 +3922,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -3967,7 +3967,7 @@
         "h": 10,
         "w": 7,
         "x": 17,
-        "y": 146
+        "y": 138
       },
       "id": 102,
       "options": {
@@ -3978,7 +3978,7 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -3989,7 +3989,7 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -4023,7 +4023,7 @@
       "type": "piechart"
     }
   ],
-  "refresh": false,
+  "refresh": "10s",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
@@ -4070,6 +4070,6 @@
   "timezone": "",
   "title": "GitHub Server Stats",
   "uid": "AjTydMm4z",
-  "version": 8,
+  "version": 25,
   "weekStart": ""
 }
