@@ -4023,7 +4023,7 @@
       "type": "piechart"
     }
   ],
-  "refresh": "10s",
+  "refresh": "",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
@@ -4070,6 +4070,6 @@
   "timezone": "",
   "title": "GitHub Server Stats",
   "uid": "AjTydMm4z",
-  "version": 25,
+  "version": 26,
   "weekStart": ""
 }
