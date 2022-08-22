@@ -23,7 +23,7 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "graphTooltip": 0,
+  "graphTooltip": 1,
   "id": 1,
   "links": [
     {
@@ -51,7 +51,7 @@
       },
       "id": 41,
       "panels": [],
-      "title": "Organizations",
+      "title": "Organizations and Teams",
       "type": "row"
     },
     {
@@ -656,7 +656,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
+        "w": 5,
         "x": 0,
         "y": 18
       },
@@ -717,8 +717,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 6,
+        "w": 5,
+        "x": 5,
         "y": 18
       },
       "id": 56,
@@ -758,6 +758,188 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "description": "Inactive users = dormant and suspended.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 10,
+        "y": 18
+      },
+      "id": 55,
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_users{host_name=~\"$host_name\"})",
+          "hide": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_dormant_users{host_name=~\"$host_name\"})",
+          "hide": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_suspended_users{host_name=~\"$host_name\"})",
+          "hide": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
+          "expression": "$A-$B-$C",
+          "hide": false,
+          "refId": "active users",
+          "type": "math"
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
+          "expression": "$B+$C",
+          "hide": false,
+          "refId": "inactive users",
+          "type": "math"
+        }
+      ],
+      "title": "Active vs Inactive Users",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 18
+      },
+      "id": 96,
+      "options": {
+        "displayLabels": [
+          "value"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(host_name) (total_users{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Users by Host",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -778,9 +960,70 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 12,
-        "y": 18
+        "w": 5,
+        "x": 0,
+        "y": 26
+      },
+      "id": 107,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "sum(total_dormant_users{host_name=~\"$host_name\"})",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Dormant Users",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 5,
+        "y": 26
       },
       "id": 53,
       "options": {
@@ -839,11 +1082,11 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 18,
-        "y": 18
+        "w": 5,
+        "x": 10,
+        "y": 26
       },
-      "id": 52,
+      "id": 108,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -930,12 +1173,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
+        "h": 8,
+        "w": 9,
+        "x": 15,
         "y": 26
       },
-      "id": 55,
+      "id": 109,
       "options": {
         "legend": {
           "calcs": [],
@@ -966,82 +1209,12 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            }
-          },
-          "mappings": []
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 26
-      },
-      "id": 96,
-      "options": {
-        "displayLabels": [
-          "value"
-        ],
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false,
-          "values": [
-            "value"
-          ]
-        },
-        "pieType": "pie",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.1.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_users{host_name=~\"$host_name\"})",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Users by Host",
-      "type": "piechart"
-    },
-    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 34
       },
       "id": 27,
       "panels": [],
@@ -1075,7 +1248,7 @@
         "h": 9,
         "w": 5,
         "x": 0,
-        "y": 36
+        "y": 35
       },
       "id": 31,
       "options": {
@@ -1167,7 +1340,7 @@
         "h": 9,
         "w": 11,
         "x": 5,
-        "y": 36
+        "y": 35
       },
       "id": 29,
       "options": {
@@ -1224,7 +1397,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 36
+        "y": 35
       },
       "id": 97,
       "options": {
@@ -1323,7 +1496,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 45
+        "y": 44
       },
       "id": 33,
       "options": {
@@ -1412,7 +1585,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 45
+        "y": 44
       },
       "id": 35,
       "options": {
@@ -1500,7 +1673,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 45
+        "y": 44
       },
       "id": 37,
       "options": {
@@ -1558,7 +1731,7 @@
         "h": 7,
         "w": 5,
         "x": 0,
-        "y": 52
+        "y": 51
       },
       "id": 91,
       "options": {
@@ -1649,7 +1822,7 @@
         "h": 7,
         "w": 11,
         "x": 5,
-        "y": 52
+        "y": 51
       },
       "id": 38,
       "options": {
@@ -1738,7 +1911,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 52
+        "y": 51
       },
       "id": 39,
       "options": {
@@ -1776,7 +1949,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 59
+        "y": 58
       },
       "id": 6,
       "panels": [],
@@ -1810,7 +1983,7 @@
         "h": 9,
         "w": 5,
         "x": 0,
-        "y": 60
+        "y": 59
       },
       "id": 12,
       "options": {
@@ -1902,7 +2075,7 @@
         "h": 9,
         "w": 11,
         "x": 5,
-        "y": 60
+        "y": 59
       },
       "id": 2,
       "options": {
@@ -1959,7 +2132,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 60
+        "y": 59
       },
       "id": 99,
       "options": {
@@ -2072,7 +2245,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 69
+        "y": 68
       },
       "id": 4,
       "options": {
@@ -2161,7 +2334,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 69
+        "y": 68
       },
       "id": 8,
       "options": {
@@ -2217,7 +2390,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 69
+        "y": 68
       },
       "id": 98,
       "options": {
@@ -2265,7 +2438,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 78
+        "y": 77
       },
       "id": 14,
       "panels": [],
@@ -2299,7 +2472,7 @@
         "h": 9,
         "w": 5,
         "x": 0,
-        "y": 79
+        "y": 78
       },
       "id": 17,
       "options": {
@@ -2391,7 +2564,7 @@
         "h": 9,
         "w": 11,
         "x": 5,
-        "y": 79
+        "y": 78
       },
       "id": 19,
       "options": {
@@ -2448,7 +2621,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 79
+        "y": 78
       },
       "id": 100,
       "options": {
@@ -2563,8 +2736,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2575,7 +2747,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 88
+        "y": 87
       },
       "id": 21,
       "options": {
@@ -2653,8 +2825,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2665,7 +2836,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 88
+        "y": 87
       },
       "id": 23,
       "options": {
@@ -2741,8 +2912,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2753,7 +2923,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 88
+        "y": 87
       },
       "id": 25,
       "options": {
@@ -2790,7 +2960,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 95
+        "y": 94
       },
       "id": 59,
       "panels": [],
@@ -2812,8 +2982,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2824,7 +2993,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 96
+        "y": 95
       },
       "id": 61,
       "options": {
@@ -2873,8 +3042,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2885,7 +3053,7 @@
         "h": 5,
         "w": 6,
         "x": 6,
-        "y": 96
+        "y": 95
       },
       "id": 64,
       "options": {
@@ -2945,7 +3113,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 96
+        "y": 95
       },
       "id": 105,
       "options": {
@@ -3043,8 +3211,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3055,7 +3222,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 101
+        "y": 100
       },
       "id": 106,
       "options": {
@@ -3104,8 +3271,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3116,7 +3282,7 @@
         "h": 5,
         "w": 6,
         "x": 6,
-        "y": 101
+        "y": 100
       },
       "id": 62,
       "options": {
@@ -3156,7 +3322,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 106
+        "y": 105
       },
       "id": 66,
       "panels": [],
@@ -3178,8 +3344,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3190,7 +3355,7 @@
         "h": 10,
         "w": 5,
         "x": 0,
-        "y": 107
+        "y": 106
       },
       "id": 74,
       "options": {
@@ -3270,8 +3435,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3282,7 +3446,7 @@
         "h": 10,
         "w": 12,
         "x": 5,
-        "y": 107
+        "y": 106
       },
       "id": 71,
       "options": {
@@ -3338,7 +3502,7 @@
         "h": 10,
         "w": 7,
         "x": 17,
-        "y": 107
+        "y": 106
       },
       "id": 103,
       "options": {
@@ -3400,7 +3564,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 117
+        "y": 116
       },
       "id": 73,
       "panels": [],
@@ -3422,8 +3586,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3434,7 +3597,7 @@
         "h": 10,
         "w": 5,
         "x": 0,
-        "y": 118
+        "y": 117
       },
       "id": 68,
       "options": {
@@ -3493,7 +3656,7 @@
         "h": 10,
         "w": 9,
         "x": 5,
-        "y": 118
+        "y": 117
       },
       "id": 104,
       "options": {
@@ -3575,7 +3738,7 @@
         "h": 10,
         "w": 10,
         "x": 14,
-        "y": 118
+        "y": 117
       },
       "id": 101,
       "options": {
@@ -3623,7 +3786,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 128
+        "y": 127
       },
       "id": 82,
       "panels": [],
@@ -3645,8 +3808,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3657,7 +3819,7 @@
         "h": 8,
         "w": 5,
         "x": 0,
-        "y": 129
+        "y": 128
       },
       "id": 85,
       "options": {
@@ -3737,8 +3899,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3749,7 +3910,7 @@
         "h": 8,
         "w": 19,
         "x": 5,
-        "y": 129
+        "y": 128
       },
       "id": 86,
       "options": {
@@ -3786,7 +3947,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 137
+        "y": 136
       },
       "id": 84,
       "panels": [],
@@ -3808,8 +3969,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3820,7 +3980,7 @@
         "h": 10,
         "w": 5,
         "x": 0,
-        "y": 138
+        "y": 137
       },
       "id": 87,
       "options": {
@@ -3899,8 +4059,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3911,7 +4070,7 @@
         "h": 10,
         "w": 12,
         "x": 5,
-        "y": 138
+        "y": 137
       },
       "id": 90,
       "options": {
@@ -3967,7 +4126,7 @@
         "h": 10,
         "w": 7,
         "x": 17,
-        "y": 138
+        "y": 137
       },
       "id": 102,
       "options": {
@@ -4070,6 +4229,6 @@
   "timezone": "",
   "title": "GitHub Server Stats",
   "uid": "AjTydMm4z",
-  "version": 26,
+  "version": 31,
   "weekStart": ""
 }
