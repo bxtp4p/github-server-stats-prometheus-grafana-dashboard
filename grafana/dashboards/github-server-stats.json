@@ -192,7 +192,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "barAlignment": 0,
+            "barAlignment": -1,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -202,6 +202,9 @@
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -217,6 +220,7 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -227,7 +231,7 @@
               }
             ]
           },
-          "unit": "string"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -296,6 +300,9 @@
       },
       "id": 93,
       "options": {
+        "displayLabels": [
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -574,6 +581,9 @@
       },
       "id": 94,
       "options": {
+        "displayLabels": [
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -910,7 +920,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -983,10 +994,16 @@
       },
       "id": 96,
       "options": {
+        "displayLabels": [
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
@@ -1046,7 +1063,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1136,7 +1154,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -1209,6 +1228,9 @@
       },
       "id": 97,
       "options": {
+        "displayLabels": [
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -1289,7 +1311,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1377,7 +1400,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1464,7 +1488,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1521,7 +1546,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1611,7 +1637,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1699,7 +1726,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1770,7 +1798,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1860,7 +1889,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -1933,12 +1963,16 @@
       },
       "id": 99,
       "options": {
+        "displayLabels": [
+          "name",
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
         },
-        "pieType": "pie",
+        "pieType": "donut",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -2026,7 +2060,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2114,7 +2149,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2185,6 +2221,9 @@
       },
       "id": 98,
       "options": {
+        "displayLabels": [
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -2248,7 +2287,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2338,7 +2378,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -2411,12 +2452,16 @@
       },
       "id": 100,
       "options": {
+        "displayLabels": [
+          "name",
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
         },
-        "pieType": "pie",
+        "pieType": "donut",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -2512,12 +2557,14 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2600,12 +2647,14 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2692,7 +2741,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2762,7 +2812,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2822,7 +2873,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2882,7 +2934,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2942,7 +2995,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -2996,34 +3050,16 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "palette-classic"
           },
           "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "fillOpacity": 80,
-            "gradientMode": "none",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
-            },
-            "lineWidth": 1,
-            "scaleDistribution": {
-              "type": "linear"
             }
           },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              }
-            ]
-          }
+          "mappings": []
         },
         "overrides": []
       },
@@ -3035,24 +3071,29 @@
       },
       "id": 105,
       "options": {
-        "barRadius": 0,
-        "barWidth": 0.97,
-        "groupWidth": 0.7,
+        "displayLabels": [
+          "value"
+        ],
         "legend": {
-          "calcs": [],
           "displayMode": "list",
           "placement": "right",
-          "showLegend": true
+          "showLegend": true,
+          "values": [
+            "percent"
+          ]
         },
-        "orientation": "vertical",
-        "showValue": "auto",
-        "stacking": "none",
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
         "tooltip": {
           "mode": "single",
           "sort": "none"
-        },
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0
+        }
       },
       "pluginVersion": "9.1.0",
       "targets": [
@@ -3107,7 +3148,7 @@
         }
       ],
       "title": "Comments by Type and Host",
-      "type": "barchart"
+      "type": "piechart"
     },
     {
       "collapsed": false,
@@ -3137,7 +3178,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -3222,12 +3264,14 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -3298,12 +3342,16 @@
       },
       "id": 103,
       "options": {
+        "displayLabels": [
+          "name",
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
         },
-        "pieType": "pie",
+        "pieType": "donut",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -3374,7 +3422,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -3448,12 +3497,16 @@
       },
       "id": 104,
       "options": {
+        "displayLabels": [
+          "name",
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
         },
-        "pieType": "pie",
+        "pieType": "donut",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -3526,6 +3579,9 @@
       },
       "id": 101,
       "options": {
+        "displayLabels": [
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -3589,7 +3645,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -3674,12 +3731,14 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -3749,7 +3808,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -3839,7 +3899,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -3910,6 +3971,10 @@
       },
       "id": 102,
       "options": {
+        "displayLabels": [
+          "name",
+          "value"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -4005,6 +4070,6 @@
   "timezone": "",
   "title": "GitHub Server Stats",
   "uid": "AjTydMm4z",
-  "version": 2,
+  "version": 8,
   "weekStart": ""
 }
