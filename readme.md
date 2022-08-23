@@ -2,7 +2,13 @@
 
 This repo contains a Grafana dashboard that can be used to monitor and visualize [GitHub Server Stats](https://docs.github.com/en/rest/enterprise-admin/admin-stats#get-github-enterprise-server-statistics) metrics. 
 
-![image](https://user-images.githubusercontent.com/10562371/184500311-d54f90cf-53d6-4a17-964c-fb1de6a64fb4.png)
+<img width="300px" align="left" src="https://user-images.githubusercontent.com/10562371/186040817-16732d6d-5dac-4089-b2a1-fd83f38b452d.png"/>
+<img width="300px" align="left" src="https://user-images.githubusercontent.com/10562371/186040899-256f328d-18f1-49a2-8849-1c85c166faae.png"/>
+<img width="300px"  src="https://user-images.githubusercontent.com/10562371/186040992-4282c9c2-1325-4fcd-aa89-560149826595.png"/>
+<img width="300px"  src="https://user-images.githubusercontent.com/10562371/186041030-ca8d6821-b060-4393-b7ca-2b023f85f7f5.png"/>
+
+<br/>
+
 
 
 ## Requirements
