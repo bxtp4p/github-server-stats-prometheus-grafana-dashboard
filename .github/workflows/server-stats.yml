@@ -12,9 +12,9 @@ jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - uses: /bxtp4p/github-server-stats-prom-exporter-action@main
+      - uses: actions/checkout@v3
       
-      - uses: ./
+      - uses: /bxtp4p/github-server-stats-prom-exporter-action@main
         id: prom-export
         with:
           personal-access-token: ${{ secrets.ACCESS_TOKEN }}
