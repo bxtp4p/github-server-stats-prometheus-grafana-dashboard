@@ -1,0 +1,25 @@
+name: Export Server Stats
+
+on:
+  workflow_dispatch:
+  
+#   run 3x an hour, 17th, 32nd and 37th minute
+
+#   schedule:
+#     - cron:  '17/15 * * * *'
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: ./
+        id: prom-export
+        with:
+          personal-access-token: ${{ secrets.ACCESS_TOKEN }}
+          enterprise-or-organization: ${{ secrets.ENTERPRISE_NAME }}
+          prometheus-pushgateway-url: ${{ secrets.PROM_PUSHGATEWAY_URL }}
+
+      - run: |
+          echo "${{ steps.prom-export.outputs.prom_metrics }}"
