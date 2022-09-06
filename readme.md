@@ -27,7 +27,7 @@ If you don't have an existing Grafana / Prometheus / Pushgateway setup, you can 
 ### Docker Compose
 
 ```shell
-docker compose -f docker-compose up -d 
+docker compose -f docker-compose.yml up -d 
 ```
 
 Then open up a browser and go to http://localhost:3000/ to open the Grafana UI and use the dashboards.
