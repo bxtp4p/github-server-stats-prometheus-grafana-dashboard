@@ -3,23 +3,47 @@ name: Export Server Stats
 on:
   workflow_dispatch:
   
-#   run 3x an hour, 17th, 32nd and 37th minute
-
-#   schedule:
-#     - cron:  '17/15 * * * *'
+  schedule:
+  # runs 3x an hour, 17th, 32nd and 37th minute
+    - cron:  '17/15 * * * *'
+env:
+  SERVER_STATS_DATA_FILE: server-stats-data.json
 
 jobs:
-  export:
+  retrieve-server-stats:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       
-      - uses: /bxtp4p/github-server-stats-prom-exporter-action@v0.1.0-alpha
-        id: prom-export
+      - uses: bxtp4p/github-server-stats-prom-exporter-action/get-server-stats@refactoring
+        id: get-server-stats
         with:
           personal-access-token: ${{ secrets.ACCESS_TOKEN }}
           enterprise-or-organization: ${{ secrets.ENTERPRISE_NAME }}
-          prometheus-pushgateway-url: ${{ secrets.PROM_PUSHGATEWAY_URL }}
+          filename: ${{ env.SERVER_STATS_DATA_FILE }}
+          
+      - name: Archive Server Stats data
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.SERVER_STATS_DATA_FILE }}
+          path: ${{ steps.get-server-stats.outputs.server-stats-data-file }}
 
-      - run: |
-          echo "${{ steps.prom-export.outputs.prom_metrics }}"
+  export-to-prometheus:
+    needs: retrieve-server-stats
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: ${{ env.SERVER_STATS_DATA_FILE }}
+          path: input/
+
+      - uses: actions/checkout@v3
+
+      - uses: bxtp4p/github-server-stats-prom-exporter-action/send-to-prometheus-gateway@refactoring
+        id: send-to-prometheus-gateway
+        with:
+          server-stats-data-file:  input/${{ env.SERVER_STATS_DATA_FILE }}
+          prometheus-pushgateway-url: ${{ secrets.PROMETHEUS_PUSHGATEWAY_URL }} 
+
+      # - name: Show Prometheus Metrics
+      #   run: echo "${{ steps.send-to-prometheus-gateway.outputs.prometheus-metrics }}"

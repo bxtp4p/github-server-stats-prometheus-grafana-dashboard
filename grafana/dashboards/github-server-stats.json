@@ -99,7 +99,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
@@ -107,7 +107,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(total_orgs{host_name=~\"$host_name\"})",
+          "expr": "sum(gh_server_stats_orgs_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -160,15 +160,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_disabled_orgs{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_disabled_orgs_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -261,8 +261,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_orgs{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_orgs_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -327,8 +327,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_orgs{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_orgs_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -381,15 +381,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_teams{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_teams_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -442,15 +442,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_team_members{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_team_members_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -539,9 +539,9 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
+          "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by(host_name) (total_orgs{host_name=~\"$host_name\"})",
+          "expr": "sum by(host_name) (gh_server_stats_teams_total{host_name=~\"$host_name\"})",
           "format": "time_series",
           "instant": false,
           "legendFormat": "__auto",
@@ -608,8 +608,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_teams{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_teams_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -675,15 +675,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_users_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -736,7 +736,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
@@ -744,7 +744,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(total_users{host_name=~\"$host_name\"}) - sum(total_suspended_users{host_name=~\"$host_name\"})",
+          "expr": "sum(gh_server_stats_users_total{host_name=~\"$host_name\"}) - sum(gh_server_stats_suspended_users_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -808,8 +808,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_users_total{host_name=~\"$host_name\"})",
           "hide": true,
           "legendFormat": "__auto",
           "range": true,
@@ -820,8 +820,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_dormant_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_dormant_users_total{host_name=~\"$host_name\"})",
           "hide": true,
           "legendFormat": "__auto",
           "range": true,
@@ -832,8 +832,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_suspended_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_suspended_users_total{host_name=~\"$host_name\"})",
           "hide": true,
           "legendFormat": "__auto",
           "range": true,
@@ -925,8 +925,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_users_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -979,15 +979,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_dormant_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_dormant_users_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1040,15 +1040,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_suspended_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_suspended_users_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1101,15 +1101,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_admin_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_admin_users_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1198,8 +1198,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_users{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_users_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1265,15 +1265,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_repos{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_repos_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1362,8 +1362,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_repos{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_repos_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1429,8 +1429,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_repos{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_repos_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1518,8 +1518,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_org_repos{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_org_repos_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1606,8 +1606,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_root_repos{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_root_repos_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1694,8 +1694,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_fork_repos{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_fork_repos_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1748,15 +1748,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_pushes{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_pushes_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1844,8 +1844,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_pushes{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_pushes_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1933,8 +1933,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_wikis{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_wikis_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2000,15 +2000,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_issues{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_issues_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2097,8 +2097,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_issues{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_issues_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2165,8 +2165,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_open_issues{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_open_issues_total{host_name=~\"$host_name\"})",
           "interval": "",
           "legendFormat": "Open",
           "range": true,
@@ -2177,8 +2177,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_closed_issues{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_closed_issues_total{host_name=~\"$host_name\"})",
           "hide": false,
           "legendFormat": "Closed",
           "range": true,
@@ -2267,8 +2267,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_open_issues{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_open_issues_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2355,8 +2355,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_closed_issues{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_closed_issues_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2422,8 +2422,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_issues{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_issues_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2489,15 +2489,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.5",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_pulls{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_pulls_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2586,8 +2586,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_pulls{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_pulls_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2654,8 +2654,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_merged_pulls{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_merged_pulls_total{host_name=~\"$host_name\"})",
           "interval": "",
           "legendFormat": "Merged",
           "range": true,
@@ -2666,8 +2666,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_mergeable_pulls)",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_mergeable_pulls_total)",
           "hide": false,
           "legendFormat": "Mergeable",
           "range": true,
@@ -2678,8 +2678,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_unmergeable_pulls{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_unmergeable_pulls_total{host_name=~\"$host_name\"})",
           "hide": false,
           "interval": "",
           "legendFormat": "Unmergeable",
@@ -2769,8 +2769,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_merged_pulls{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_merged_pulls_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2857,8 +2857,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_mergeable_pulls{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_mergeable_pulls_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2944,8 +2944,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_unmergeable_pulls{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_unmergeable_pulls_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3010,15 +3010,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_issue_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_issue_comments_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3070,15 +3070,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_pull_request_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_pull_request_comments_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3148,8 +3148,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_issue_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_issue_comments_total{host_name=~\"$host_name\"})",
           "legendFormat": "Issues ({{host_name}})",
           "range": true,
           "refId": "Issues"
@@ -3159,8 +3159,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_pull_request_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_pull_request_comments_total{host_name=~\"$host_name\"})",
           "hide": false,
           "legendFormat": "PRs ({{host_name}})",
           "range": true,
@@ -3171,8 +3171,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_commit_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_commit_comments_total{host_name=~\"$host_name\"})",
           "hide": false,
           "interval": "",
           "legendFormat": "Commits ({{host_name}})",
@@ -3184,8 +3184,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_gist_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_gist_comments_total{host_name=~\"$host_name\"})",
           "hide": false,
           "interval": "",
           "legendFormat": "Gists ({{host_name}})",
@@ -3239,15 +3239,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_commit_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_commit_comments_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3299,15 +3299,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_gist_comments{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_gist_comments_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3372,15 +3372,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_gists{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_gists_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3467,8 +3467,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_gists{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_gists_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3535,8 +3535,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_gists{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_public_gists_total{host_name=~\"$host_name\"})",
           "interval": "",
           "legendFormat": "Public",
           "range": true,
@@ -3547,8 +3547,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_private_gists)",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_private_gists_total)",
           "hide": false,
           "legendFormat": "Private",
           "range": true,
@@ -3614,15 +3614,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_hooks{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_hooks_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3689,8 +3689,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_active_hooks{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_active_hooks_total{host_name=~\"$host_name\"})",
           "interval": "",
           "legendFormat": "Active",
           "range": true,
@@ -3701,8 +3701,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_inactive_hooks)",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_inactive_hooks_total)",
           "hide": false,
           "interval": "",
           "legendFormat": "Inactive",
@@ -3770,8 +3770,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_active_hooks{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_active_hooks_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "Active Hooks"
@@ -3836,15 +3836,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_pages{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_pages_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3931,8 +3931,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_pages{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_pages_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3997,15 +3997,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.0",
+      "pluginVersion": "9.1.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_milestones{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_milestones_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -4091,8 +4091,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum by(host_name) (total_milestones{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum by(host_name) (gh_server_stats_milestones_total{host_name=~\"$host_name\"})",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -4159,8 +4159,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_open_milestones{host_name=~\"$host_name\"})",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_open_milestones_total{host_name=~\"$host_name\"})",
           "legendFormat": "Open",
           "range": true,
           "refId": "Open Milestones"
@@ -4170,8 +4170,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "sum(total_closed_milestones)",
+          "editorMode": "code",
+          "expr": "sum(gh_server_stats_closed_milestones_total)",
           "hide": false,
           "legendFormat": "Closed",
           "range": true,
@@ -4229,6 +4229,6 @@
   "timezone": "",
   "title": "GitHub Server Stats",
   "uid": "AjTydMm4z",
-  "version": 31,
+  "version": 2,
   "weekStart": ""
 }
